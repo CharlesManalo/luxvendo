@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 14% 4%;
+    --foreground: 240 5% 90%;
+    --card: 240 12% 6%;
+    --card-foreground: 240 5% 90%;
+    --popover: 240 12% 6%;
+    --popover-foreground: 240 5% 90%;
+    --primary: 239 84% 67%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 8% 12%;
+    --secondary-foreground: 240 5% 90%;
+    --muted: 240 8% 12%;
+    --muted-foreground: 240 5% 55%;
+    --accent: 240 8% 12%;
+    --accent-foreground: 240 5% 90%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 15%;
+    --input: 240 10% 15%;
+    --ring: 239 84% 67%;
+    --radius: 0.625rem;
+    --sidebar-background: 240 12% 6%;
+    --sidebar-foreground: 240 5% 90%;
+    --sidebar-primary: 239 84% 67%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 8% 12%;
+    --sidebar-accent-foreground: 240 5% 90%;
+    --sidebar-border: 240 10% 15%;
+    --sidebar-ring: 239 84% 67%;
+    --success: 142 71% 45%;
+    --warning: 48 96% 53%;
+    --info: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-[#111118]/80 backdrop-blur-sm border border-[#2a2a3a];
+  }
+  
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .status-active {
+    @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+  }
+  
+  .status-used {
+    @apply bg-blue-500/10 text-blue-400 border border-blue-500/20;
+  }
+  
+  .status-expired {
+    @apply bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+  
+  .status-disabled {
+    @apply bg-gray-500/10 text-gray-400 border border-gray-500/20;
+  }
+  
+  .status-paused {
+    @apply bg-amber-500/10 text-amber-400 border border-amber-500/20;
+  }
+  
+  .status-terminated {
+    @apply bg-red-500/10 text-red-400 border border-red-500/20;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.1) transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.1);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.2);
+  }
+}
